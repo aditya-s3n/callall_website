@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+      domains: ['callall.ai'], // Add your domain here
+    },
+};
 
 export default nextConfig;
