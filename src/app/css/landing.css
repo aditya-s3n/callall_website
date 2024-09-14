@@ -1,0 +1,30 @@
+.outline-header {
+    border-color: #8F8F8F !important;
+}
+
+.header-link {
+    color: #8F8F8F;
+
+    
+}
+
+.header-link:hover {
+    color: white;
+}
+
+.header-btn {
+    border: 1px solid;
+    border-color: #C1FF72;
+    border-radius: 10px;
+
+    color: #C1FF72;
+}
+
+.header-btn:hover {
+    border: 1px solid;
+    border-color: #C1FF72;
+    border-radius: 10px;
+    background-color: #C1FF72;
+
+    color: black;
+}
