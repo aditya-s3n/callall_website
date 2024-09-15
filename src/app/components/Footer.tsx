@@ -24,15 +24,15 @@ function Footer() {
                 <ul className="nav flex-column">
                     <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-decoration-underline header-link">Phone</a></li>
                     <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-decoration-underline header-link">Email</a></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-decoration-underline header-link">What we do</a></li>
+                    <li className="nav-item mb-2"><a href="/howitworks" className="nav-link p-0 text-decoration-underline header-link">How it works</a></li>
                 </ul>
             </div>
 
             <div className="col mb-3">
                 <h5 className="mb-3">Resources</h5>
                 <ul className="nav flex-column">
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-decoration-underline header-link">About us</a></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-decoration-underline header-link">Pricing</a></li>
+                    <li className="nav-item mb-2"><a href="/whatwedo" className="nav-link p-0 text-decoration-underline header-link">About us</a></li>
+                    <li className="nav-item mb-2"><a href="/pricing" className="nav-link p-0 text-decoration-underline header-link">Pricing</a></li>
                 </ul>
             </div>
 

@@ -16,9 +16,9 @@ function Header() {
             </a>
 
             <ul className="nav nav-pills">
-                <li className="nav-item"><a href="#" className="nav-link header-link" aria-current="page">What we do</a></li>
-                <li className="nav-item"><a href="#" className="nav-link header-link">How it works</a></li>
-                <li className="nav-item"><a href="#" className="nav-link header-link me-3">Pricing</a></li>
+                <li className="nav-item"><a href="/whatwedo" className="nav-link header-link" aria-current="page">What we do</a></li>
+                <li className="nav-item"><a href="/howitworks" className="nav-link header-link">How it works</a></li>
+                <li className="nav-item"><a href="/pricing" className="nav-link header-link me-3">Pricing</a></li>
                 <li className="nav-item"><a href="#" className="btn header-btn nav-link">Book a Meeting</a></li>
             </ul>
         </header>

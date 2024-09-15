@@ -143,15 +143,15 @@ export default function Home() {
         </div>
 
         <div className='row m-0'>
-          <div className='col'>
-              <p>Call All will automate 15,000+ prospects</p>
+          <div className='col ps-5'>
+              <p className='fs-4 my-5 pt-5'>Call All will automate 15,000+ prospects</p>
 
-              <p>via</p>
+              <p className='fs-4'>via</p>
 
-              <ul>
-                <li>Phone</li>
-                <li>Email</li>
-                <li>Text</li>
+              <ul style={{ listStyleType: 'disc', marginLeft: 40 }}>
+                <li className='fs-4'>Phone</li>
+                <li className='fs-4'>Email</li>
+                <li  className='fs-4'>Text</li>
               </ul>
           </div>
 
@@ -213,8 +213,15 @@ export default function Home() {
         </div>
 
         <div className='row m-0'>
-          <div className='col'>
+          <div className='col-5'>
+              <p className='fw-bold fs-5 mt-5'>Need some Answers?</p>
+              <p className='header-link nav-link'>We're here to help</p>
 
+              <p className='header-link nav-link mt-4'>Contact us via phone or email.</p>
+              <p className='header-link nav-link'>9AM - 5PM EST</p>
+
+              <p className='mt-4'><u>Email:</u> support@callall.ai</p>
+              <p className='mb-4'><u>Phone:</u> (111)-111-1111</p>
           </div>
 
           <div className='col'>

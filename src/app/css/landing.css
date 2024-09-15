@@ -97,19 +97,18 @@
 }
 
 .faq-body {
-    background-color: #8F8F8F;
+    background-color: #333333;
     border: none;
-    opacity: 31%;
+    color: #8F8F8F;
 }
 
 .faq-header {
-    background-color: #8F8F8F;
-    opacity: 35%;
-    border: 1px solid;
     border-color: white;
+    color: white;
 }
 
 .faq-title {
     font-weight: bold;
-
+    background-color: #393939 !important;
+    color: white !important;
 }
