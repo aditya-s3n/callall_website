@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import '../css/chat.css';
 
 export default function Chat() {
@@ -14,13 +14,6 @@ export default function Chat() {
     setMessages([...messages, { text: inputMessage, sender: "user" }]);
     setInputMessage('');
   };
-
-//   useEffect(() => {
-//     // Scroll to bottom when new message is added
-//     if (chatRef.current) {
-//       chatRef.current.scrollTop = chatRef.current.scrollHeight;
-//     }
-//   }, [messages]);
 
   return (
     <div className="container-chat">
