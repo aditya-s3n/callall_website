@@ -1,5 +1,6 @@
 import logo from "../imgs/logo_header.png"
 import Image from "next/image";
+import "../css/landing.css";
 
 function Header() {
     return (

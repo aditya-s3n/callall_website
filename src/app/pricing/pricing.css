@@ -1,0 +1,15 @@
+.container-pricing {
+    background-color: #272727;
+    border: 1px solid;
+    border-color: #888888;
+    border-radius: 15px;
+}
+
+.text-detail {
+    color: #8F8F8F;
+}
+
+.border-divider {
+    border-right: 1px solid;
+    border-color: #888888;
+}
