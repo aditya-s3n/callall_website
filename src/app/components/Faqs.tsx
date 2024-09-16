@@ -36,7 +36,7 @@ function Faqs() {
                 <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div className="accordion-body faq-body">
                     Call All is a proprietary sales AI that calls, emails, and texts
-                    potential prospects. Call All can be customized to the user’s
+                    potential prospects. Call All can be customized to the user&apos;s
                     product, goals, and client-base. Use Call All to get through
                     100,000+ prospects in a single day. 
                 </div>

@@ -19,7 +19,7 @@ function Message() {
                     <p className="mt-4 info-text">
                         <span className="info-header"><i className="bi bi-shop me-2"></i> Find out about our pricing. </span>
                         Create a custom plan. <br />
-                        We’re here to support your needs and business.
+                        We&apos;re here to support your needs and business.
                     </p>
                 </div>
 
