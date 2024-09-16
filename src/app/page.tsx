@@ -41,7 +41,7 @@ export default function Home() {
 
                   <p className="sub-title-txt mt-2 mb-5">Because AIs Don&apos;t Make Excuses</p>
 
-                  <button className="btn header-btn large-btn">Book a Meeting</button>
+                  <a href='https://cal.com/courtneycarroll/test-callall.ai-phone-appoint'><button className="btn header-btn large-btn">Book a Meeting</button></a>
               </div>
           </div>
       </div>
@@ -241,7 +241,7 @@ export default function Home() {
 
         <h1 className='fw-bold fs-3 mb-4'>Because AIs Don&apos;t Make Excuses</h1>
 
-        <button className="btn header-btn large-btn w-50 py-2">Book a Meeting</button>
+        <a href='https://cal.com/courtneycarroll/test-callall.ai-phone-appoint'><button className="btn header-btn large-btn w-50 py-2">Book a Meeting</button></a>
 
       </div>
 
