@@ -34,7 +34,7 @@ function HowItWorks() {
                 </div>
             </div>
 
-            <div className="container mb-5">
+            <div className="container mb-5 border-bottom">
                 <div className="row">
                     <div className="col-md-12">
                         <div className="card timeline-bg">
