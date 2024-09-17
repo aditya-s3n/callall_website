@@ -1,6 +1,6 @@
 import "../css/landing.css"
 
-function Overlay({ title, text, className }: { title: String, text: String, className: String }) {
+function Overlay({ title, text, className }: { title: string, text: string, className: string }) {
     return (
         <div className={`overlay-container ${className}`}>
             <p className="fs-5 fw-bold mb-3">{title}</p>
