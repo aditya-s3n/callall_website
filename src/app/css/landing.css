@@ -112,3 +112,12 @@
     background-color: #393939 !important;
     color: white !important;
 }
+
+.overlay-container {
+    background-color: #262626;
+    width: 50%;
+
+    border-radius: 20px;
+
+    padding: 25px;
+}

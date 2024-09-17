@@ -1,0 +1,22 @@
+.container-card {
+    background-color: #232121;
+    border: 1.5px solid;
+    border-color: white;
+
+    border-radius: 20px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.card-text {
+    color: #8F8F8F;
+}
+
+.card-icon {
+    background-color: #445032;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.container-card:hover {
+    border-color: #8F8F8F;
+}
