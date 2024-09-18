@@ -11,7 +11,7 @@ function Faqs() {
                 </h2>
                 <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div className="accordion-body faq-body">
-                    Example text
+                    Absolutely! Call All is designed to optimize your lead outreach and conversion rates. By automating follow-ups, ensuring consistent engagement, and leveraging advanced AI techniques, it turns potential leads into actual clients, offering significant returns on your investment.
                 </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@ function Faqs() {
                 </h2>
                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div className="accordion-body faq-body">
-                    example text
+                    Call All uses advanced AI technology to streamline and enhance your lead outreach. It automates the process of making calls, sending texts, and dispatching emails, ensuring consistent and personalized communication with leads. The AI continuously engages with leads through empathetic objection handling and strategic marketing efforts, driving higher engagement and conversions.
                 </div>
                 </div>
             </div>

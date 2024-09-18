@@ -51,43 +51,43 @@ function HowItWorks() {
                                         </li>
                                         <li className="event" data-date="2">
                                             <div className="text-center">
-                                                <i className="bi bi-journal-arrow-up fs-2 header-link nav-link"></i>
+                                                <i className="bi bi-currency-dollar fs-2 header-link nav-link"></i>
                                             </div>
                                             
-                                            <p className="mt-4 fs-5 fw-bold">Proven Methods from 7 Years of sales experience.</p>
-                                            <p className="header-link nav-link mt-2">Hundreds of Thousands of emails, calls, and texts</p>
+                                            <p className="mt-4 fs-5 fw-bold">$100s million of converted online leads</p>
+                                            <p className="header-link nav-link mt-2">Our AI has helped convert hundreds of millions of dollars in online leads, driving real results for real estate professionals.</p>
                                         </li>
                                         <li className="event" data-date="3">
                                             <div className="text-center">
-                                                <i className="bi bi-journal-arrow-up fs-2 header-link nav-link"></i>
+                                                <i className="bi bi-globe fs-2 header-link nav-link"></i>
                                             </div>
                                             
-                                            <p className="mt-4 fs-5 fw-bold">Proven Methods from 7 Years of sales experience.</p>
-                                            <p className="header-link nav-link mt-2">Hundreds of Thousands of emails, calls, and texts</p>
+                                            <p className="mt-4 fs-5 fw-bold">Trained AI integration</p>
+                                            <p className="header-link nav-link mt-2">Our AI is specifically trained for seamless integration with your outreach processes, making lead engagement effortless and efficient.</p>
                                         </li>
                                         <li className="event" data-date="4">
                                             <div className="text-center">
-                                                <i className="bi bi-journal-arrow-up fs-2 header-link nav-link"></i>
+                                                <i className="bi bi-bullseye fs-2 header-link nav-link"></i>
                                             </div>
                                             
-                                            <p className="mt-4 fs-5 fw-bold">Proven Methods from 7 Years of sales experience.</p>
-                                            <p className="header-link nav-link mt-2">Hundreds of Thousands of emails, calls, and texts</p>
+                                            <p className="mt-4 fs-5 fw-bold">Strategic marketing efforts</p>
+                                            <p className="header-link nav-link mt-2">Our AI enhances your outreach with targeted, data-driven marketing strategies designed to maximize lead engagement and conversion.</p>
                                         </li>
                                         <li className="event" data-date="5">
                                             <div className="text-center">
-                                                <i className="bi bi-journal-arrow-up fs-2 header-link nav-link"></i>
+                                                <i className="bi bi-chat-left-heart-fill fs-2 header-link nav-link"></i>
                                             </div>
                                             
-                                            <p className="mt-4 fs-5 fw-bold">Proven Methods from 7 Years of sales experience.</p>
-                                            <p className="header-link nav-link mt-2">Hundreds of Thousands of emails, calls, and texts</p>
+                                            <p className="mt-4 fs-5 fw-bold">Taught empathetic objection handling</p>
+                                            <p className="header-link nav-link mt-2">Our AI is equipped with empathetic objection handling skills, addressing client concerns with understanding and precision to keep conversations productive and positive.</p>
                                         </li>
                                         <li className="event" data-date="6">
                                             <div className="text-center">
-                                                <i className="bi bi-journal-arrow-up fs-2 header-link nav-link"></i>
+                                                <i className="bi bi-calendar-check-fill fs-2 header-link nav-link"></i>
                                             </div>
                                             
-                                            <p className="mt-4 fs-5 fw-bold">Proven Methods from 7 Years of sales experience.</p>
-                                            <p className="header-link nav-link mt-2">Hundreds of Thousands of emails, calls, and texts</p>
+                                            <p className="mt-4 fs-5 fw-bold">Outcome: booked appointments, live transfers, or agent &apos;hotlist&apos;</p>
+                                            <p className="header-link nav-link mt-2">Our AI ensures actionable results by securing booked appointments, facilitating live transfers, or adding leads to an agent&apos;s &apos;hotlist&apos; for timely follow-up.</p>
                                         </li>
                                     </ul>
                                 </div>

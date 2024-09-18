@@ -31,7 +31,7 @@ function Pricing() {
                         <li className="text-detail nav-link my-2"><i className="bi bi-chat-dots-fill"></i> AI Chat bot</li>
                     </ul>
 
-                    <button className="btn header-btn nav-link m-auto w-50">Start Today</button>
+                    <a href="https://cal.com/courtneycarroll/test-callall.ai-phone-appoint"><button className="btn header-btn nav-link m-auto w-50">Start Today</button></a>
                 </div>
 
                 <div className="col my-4 mx-4">
@@ -42,13 +42,13 @@ function Pricing() {
                     <p>Pay as you go.</p>
 
                     <ul className="my-5">
-                        <li className="text-detail nav-link"><i className="bi bi-envelope-fill"></i> Unlimited Emails</li>
-                        <li className="text-detail nav-link my-2"><i className="bi bi-telephone-fill"></i> Unlimited Calls</li>
-                        <li className="text-detail nav-link"><i className="bi bi-chat-left-fill"></i> Unlimited Texts</li>
-                        <li className="text-detail nav-link my-2"><i className="bi bi-chat-dots-fill"></i> AI Chat bot</li>
+                        <li className="text-detail nav-link"><i className="bi bi-box-arrow-right"></i> Custom campaigns</li>
+                        <li className="text-detail nav-link my-2"><i className="bi bi-telephone-plus-fill"></i> Live support</li>
+                        <li className="text-detail nav-link"><i className="bi bi-tools"></i> Tailored AI sales calls</li>
+                        <li className="text-detail nav-link my-2"><i className="bi bi-plus-circle-fill"></i> Much more...</li>
                     </ul>
 
-                    <button className="btn header-btn nav-link m-auto w-50">Contact Sales</button>
+                    <a href="https://cal.com/courtneycarroll/test-callall.ai-phone-appoint"><button className="btn header-btn nav-link m-auto w-50">Contact Sales</button></a>
                 </div>
             </div>
             

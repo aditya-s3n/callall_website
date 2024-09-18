@@ -2,7 +2,7 @@
     background-color: #232121;
     border: 1.5px solid;
     border-color: white;
-
+    height: 95%;
     border-radius: 20px;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
