@@ -5,20 +5,17 @@ import "../css/landing.css";
 import { useState } from 'react';
 
 function Calculator() {
-    const [housePrice, setHousePrice] = useState(0.0);
-    const [commissionRate, setCommissionRate] = useState(0.0);
-    const [totalLeads, setTotalLeads] = useState(0.0);
-    const [leadConversion, setLeadConversion] = useState(0.0);
+    const [housePrice, setHousePrice] = useState(816000);
+    const [commissionRate, setCommissionRate] = useState(2.5);
+    const [totalLeads, setTotalLeads] = useState(30000);
+    const [leadConversion, setLeadConversion] = useState(0.1);
 
-    const [totalCommission, setTotalCommission] = useState(0.0);
-    const [leads, setLeads] = useState(0.0);
-    const [gci, setGCI] = useState(0.0);
+    const [totalCommission, setTotalCommission] = useState(20400);
+    const [leads, setLeads] = useState(30);
+    const [gci, setGCI] = useState(612000);
 
     function calculateCommission() {
         if (housePrice && commissionRate) {
-            console.log(housePrice);
-            console.log(commissionRate);
-            console.log(housePrice * (commissionRate / 100));
             setTotalCommission(housePrice * (commissionRate / 100));
         }
 
@@ -51,6 +48,8 @@ function Calculator() {
                          
                             calculateCommission();
                         }}
+
+                        value={housePrice}
                          
                          prefix='$ ' className='w-50 p-2 input-format' placeholder='$ 0' thousandSeparator decimalScale={2} allowNegative={false} />
                 </div>
@@ -60,12 +59,12 @@ function Calculator() {
                     <NumericFormat 
                     onValueChange={(value) => {
                         if (value.floatValue) {
-                            console.log(value);
                             setCommissionRate(value.floatValue);
                         }
 
                         calculateCommission();
                     }} 
+                    value={commissionRate}
                     suffix=' %' className='w-50 p-2 input-format' thousandSeparator placeholder='0 %' allowNegative={false} />
                 </div>
 
@@ -79,6 +78,7 @@ function Calculator() {
 
                         calculateDeals();
                     }}  
+                    value={totalLeads}
                     prefix='' className='w-50 p-2 input-format' placeholder='0' thousandSeparator allowNegative={false} />
                 </div>
 
@@ -92,6 +92,7 @@ function Calculator() {
 
                         calculateDeals();
                     }} 
+                    value={leadConversion}
                     suffix=' %' className='w-50 p-2 input-format' thousandSeparator placeholder='0 %' allowNegative={false} />
                 </div>
             </div>
