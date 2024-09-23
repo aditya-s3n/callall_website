@@ -29,7 +29,7 @@ function HowItWorks() {
                     <Overlay 
                         className={"m-auto"}
                         title={"Next Gen AI is here."}
-                        text={"Call All continually improves the more it's used. Symbiotic relationship of refinement."}
+                        text={"CallAll.AI continually improves the more it's used. Symbiotic relationship of refinement."}
                     />
                 </div>
             </div>

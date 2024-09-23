@@ -12,7 +12,7 @@ function Message() {
 
                     <p className="mt-5 info-text">
                         <span className="info-header"><i className="bi bi-telephone me-2"></i> Get a demo. </span>
-                        To see the value of Call All.<br />
+                        To see the value of CallAll.AI.<br />
                         The next addition to your sales team.
                     </p>
 

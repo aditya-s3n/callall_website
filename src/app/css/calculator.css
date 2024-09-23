@@ -1,0 +1,33 @@
+.input-format {
+    border-radius: 10px;
+    background-color: #1d1d1d;
+    color: white;
+    padding: 10px 15px;
+    border-color: #8F8F8F !important;
+    border: 1px solid;
+}
+ 
+
+.input-format::placeholder {
+    color: #8F8F8F;
+    border-color: #8F8F8F !important;
+}
+
+.input-format:focus {
+    background-color: #1d1d1d;
+    color: white;
+    border-color: #8F8F8F !important;
+}
+
+.calc-container {
+    background-color: #1d1d1d;
+    box-shadow: 0 10px 40px #0000001a;
+    border-radius: 2rem;
+    margin: auto;
+    text-align: center;
+}
+
+.gci-container {
+    margin-top: 10% !important;
+    margin-bottom: 25px;
+}

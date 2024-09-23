@@ -18,7 +18,7 @@ function WhatWeDo() {
                     <Overlay 
                         className={"ms-5"}
                         title={"Turn leads into clients."}
-                        text={"Call All is able to separate and identify bad, good, and great prospects"}
+                        text={"CallAll.AI is able to separate and identify bad, good, and great prospects"}
                     />
                 </div>
 
@@ -54,7 +54,7 @@ function WhatWeDo() {
 
                     <div className="col">
                         <Card 
-                            title={"Call All is persistent"}
+                            title={"CallAll.AI is persistent"}
                             text={"When potential buyers register on websites, agents often make a few calls before giving up. Our AI ensures consistent follow-up by reaching out multiple times through calls, texts, and emails, increasing your chances of turning a lead into a client."}
                             icon={"bi-telephone-forward-fill"}
                         />

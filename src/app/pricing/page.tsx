@@ -20,7 +20,7 @@ function Pricing() {
                 <div className="col my-4 mx-4 border-divider">
                     <p className="fs-3 fw-bold">Pro</p>
 
-                    <p className="text-detail mt-3">Call All&apos;s complete package.</p>
+                    <p className="text-detail mt-3">CallAll.AI&apos;s complete package.</p>
                     <p className="text-detail">Ready to take on thousands of prospects</p>
                     <p>$XX / month.</p>
 

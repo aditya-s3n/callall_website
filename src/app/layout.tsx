@@ -17,8 +17,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Call All",
-  description: "Call All, making client outreach easier",
+  title: "CallAll.AI",
+  description: "CallAll.AI, making client outreach easier",
 };
 
 export default function RootLayout({
