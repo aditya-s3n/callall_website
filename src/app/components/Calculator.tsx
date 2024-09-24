@@ -14,7 +14,7 @@ function Calculator() {
     const [leads, setLeads] = useState(30);
     const [gci, setGCI] = useState(612000);
 
-    function calculateCommission(newHousePrice: any, newCommissionRate: any) {
+    function calculateCommission(newHousePrice: number, newCommissionRate: number) {
         if (newHousePrice && newCommissionRate) {
             const newCommission = newHousePrice * (newCommissionRate / 100);
             setTotalCommission(newCommission);
@@ -22,7 +22,7 @@ function Calculator() {
         }
     }
 
-    function calculateDeals(newTotalLeads: any, newLeadConversion: any) {
+    function calculateDeals(newTotalLeads: number, newLeadConversion: number) {
         if (newTotalLeads && newLeadConversion) {
             const newLead = newTotalLeads * (newLeadConversion / 100);
             setLeads(newLead);
@@ -30,7 +30,7 @@ function Calculator() {
         }
     }
 
-    function calculateGCI(newTotalComission: any, newLeads: any) {
+    function calculateGCI(newTotalComission: number, newLeads: number) {
         setGCI(newTotalComission * newLeads);
     }
 
