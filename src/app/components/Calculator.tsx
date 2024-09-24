@@ -14,24 +14,24 @@ function Calculator() {
     const [leads, setLeads] = useState(30);
     const [gci, setGCI] = useState(612000);
 
-    function calculateCommission() {
-        if (housePrice && commissionRate) {
-            setTotalCommission(housePrice * (commissionRate / 100));
+    function calculateCommission(newHousePrice: any, newCommissionRate: any) {
+        if (newHousePrice && newCommissionRate) {
+            const newCommission = newHousePrice * (newCommissionRate / 100);
+            setTotalCommission(newCommission);
+            calculateGCI(newCommission, leads);
         }
-
-        calculateGCI();
     }
 
-    function calculateDeals() {
-        if (totalLeads && leadConversion) {
-            setLeads(totalLeads * (leadConversion / 100));
+    function calculateDeals(newTotalLeads: any, newLeadConversion: any) {
+        if (newTotalLeads && newLeadConversion) {
+            const newLead = newTotalLeads * (newLeadConversion / 100);
+            setLeads(newLead);
+            calculateGCI(totalCommission, newLead);
         }
-
-        calculateGCI();
     }
 
-    function calculateGCI() {
-        setGCI(totalCommission * leads);
+    function calculateGCI(newTotalComission: any, newLeads: any) {
+        setGCI(newTotalComission * newLeads);
     }
 
     return (
@@ -43,10 +43,10 @@ function Calculator() {
                     <NumericFormat 
                         onValueChange={(value) => {
                             if (value.floatValue) {
+                                console.log(value);
                                 setHousePrice(value.floatValue);
-                            }
-                         
-                            calculateCommission();
+                                calculateCommission(value.floatValue, commissionRate);
+                            }   
                         }}
 
                         value={housePrice}
@@ -60,9 +60,8 @@ function Calculator() {
                     onValueChange={(value) => {
                         if (value.floatValue) {
                             setCommissionRate(value.floatValue);
+                            calculateCommission(housePrice, value.floatValue);
                         }
-
-                        calculateCommission();
                     }} 
                     value={commissionRate}
                     suffix=' %' className='w-50 p-2 input-format' thousandSeparator placeholder='0 %' allowNegative={false} />
@@ -74,9 +73,8 @@ function Calculator() {
                     onValueChange={(value) => {
                         if (value.floatValue) {
                             setTotalLeads(value.floatValue);
+                            calculateDeals(value.floatValue, leadConversion);
                         }
-
-                        calculateDeals();
                     }}  
                     value={totalLeads}
                     prefix='' className='w-50 p-2 input-format' placeholder='0' thousandSeparator allowNegative={false} />
@@ -88,9 +86,8 @@ function Calculator() {
                     onValueChange={(value) => {
                         if (value.floatValue) {
                             setLeadConversion(value.floatValue);
+                            calculateDeals(totalLeads, value.floatValue);
                         }
-
-                        calculateDeals();
                     }} 
                     value={leadConversion}
                     suffix=' %' className='w-50 p-2 input-format' thousandSeparator placeholder='0 %' allowNegative={false} />
