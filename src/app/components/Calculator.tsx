@@ -113,7 +113,7 @@ function Calculator() {
                     </div>
                     
                     <div className='d-flex justify-content-between w-75 m-auto mt-3'>
-                        <p>Total Deals</p>
+                        <p>Total Leads</p>
                         <p className='header-link nav-link'><span className='fs-5 fw-bold'>{totalLeads.toLocaleString()}</span></p>
                     </div>
                     <div className='d-flex justify-content-between w-75 m-auto mt-1'>
@@ -121,7 +121,7 @@ function Calculator() {
                         <p className='header-link nav-link'><span className='fs-5 fw-bold'>{leadConversion.toLocaleString()} %</span></p>
                     </div>
                     <div className='d-flex justify-content-between w-75 m-auto mt-1'>
-                        <p>Total Deals Per Year</p>
+                        <p>Total Leads Per Year</p>
                         <p className='header-link nav-link'><span className='fs-5 fw-bold'>{leads.toLocaleString()}</span> deals / year</p>
                     </div>
 
