@@ -3,7 +3,7 @@ import "../css/landing.css"
 
 function Message() {
     return (
-        <div className="row m-0 mx-5">
+        <div className="row m-0 mx-5 row-cols-1 row-cols-md-2">
 
             <div className="col">
 
@@ -26,7 +26,7 @@ function Message() {
             </div>
 
 
-            <div className="col">
+            <div className="col mt-3 mt-md-3">
 
                 <div className="form-container">
                     <div>
@@ -45,12 +45,12 @@ function Message() {
                         </div>
                     </div>
 
-                    <div className="row m-0 mt-4">
-                        <div className="col-7">
+                    <div className="row m-0 mt-4 row-cols-1 row-cols-md-2 ">
+                        <div className="col col-md-7 ">
                             <p className="policy">By submitting the form, I confirm<br /> to agree to the terms and privacy policy.</p>
                         </div>
 
-                        <div className="col p-0">
+                        <div className="col col-md-5 p-0 mt-2 mt-md-0">
                             <button className="btn header-btn nav-link w-100">Submit</button>
                         </div>
                     </div>

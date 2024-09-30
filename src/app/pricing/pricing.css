@@ -13,3 +13,11 @@
     border-right: 1px solid;
     border-color: #888888;
 }
+
+@media (max-width: 768px) {
+    .border-divider {
+        border: 0px solid;
+        border-bottom: 1px solid;
+        padding-bottom: 50px;
+    }
+}

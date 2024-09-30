@@ -13,7 +13,7 @@ function WhatWeDo() {
         <div>
             <Header />
 
-            <div className="border-bottom pb-5 row m-0">
+            <div className="border-bottom pb-5 row m-0 row-cols-1 row-cols-md-2">
                 <div className="col">
                     <Overlay 
                         className={"ms-5"}
@@ -24,7 +24,7 @@ function WhatWeDo() {
 
                 <div className="col">
                     <Image 
-                        className=''
+                        className='m-auto'
                         src={logo}
                         width={300}
                         height={300}

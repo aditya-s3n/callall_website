@@ -21,8 +21,9 @@ function Pricing() {
                     <p className="fs-3 fw-bold">Pro</p>
 
                     <p className="text-detail mt-3">CallAll.AI&apos;s complete package.</p>
-                    <p className="text-detail">Ready to take on thousands of prospects</p>
-                    <p>$XX / month.</p>
+                    <p className="text-detail">Ready to take on thousands of prospects.</p>
+                    <p className="text-detail">Tailored AI Agent.</p>
+                    <p>$899 / month.</p>
 
                     <ul className="my-5">
                         <li className="text-detail nav-link"><i className="bi bi-envelope-fill"></i> Unlimited Emails</li>
@@ -39,16 +40,17 @@ function Pricing() {
 
                     <p className="text-detail mt-3">Everything in Pro, plus more.</p>
                     <p className="text-detail">Tailored for your own business needs.</p>
+                    <p className="text-detail">Tailored AI Agent(s).</p>
                     <p>Pay as you go.</p>
 
                     <ul className="my-5">
                         <li className="text-detail nav-link"><i className="bi bi-box-arrow-right"></i> Custom campaigns</li>
                         <li className="text-detail nav-link my-2"><i className="bi bi-telephone-plus-fill"></i> Live support</li>
-                        <li className="text-detail nav-link"><i className="bi bi-tools"></i> Tailored AI sales calls</li>
+                        <li className="text-detail nav-link"><i className="bi bi-tools"></i> Up to Three Tailored AI Agent</li>
                         <li className="text-detail nav-link my-2"><i className="bi bi-plus-circle-fill"></i> Much more...</li>
                     </ul>
 
-                    <a href="https://cal.com/courtneycarroll/test-callall.ai-phone-appoint"><button className="btn header-btn nav-link m-auto w-50">Contact Sales</button></a>
+                    <a href="https://cal.com/courtneycarroll/test-callall.ai-phone-appoint"><button className="btn header-btn nav-link m-auto w-75">Book Appointment For Pricing</button></a>
                 </div>
             </div>
             

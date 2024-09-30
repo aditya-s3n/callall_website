@@ -14,7 +14,7 @@ function HowItWorks() {
         <div>
             <Header />
 
-            <div className="border-bottom pb-5 row m-0">
+            <div className="border-bottom pb-5 row m-0 row-cols-1 row-cols-md-2">
                 <div className="col">
                     <Image 
                         className='m-auto'

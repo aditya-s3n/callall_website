@@ -136,3 +136,22 @@ opacity: 1;
 transform: none;
 visibility: visible;
 }
+
+.footer-hide {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .overlay-container {
+        width: 75%;
+    }
+
+    .footer-mobile {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .footer-hide {
+        display: none;
+    }
+}

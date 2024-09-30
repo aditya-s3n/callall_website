@@ -35,10 +35,10 @@ function Calculator() {
     }
 
     return (
-        <div className='row my-5'>
+        <div className='row my-5 row-cols-1 row-cols-md-2'>
 
-            <div className='col mb-5'>
-                <div className='mt-3'>
+            <div className='col mb-5 text-center text-md-start'>
+                <div className='mt-3 '>
                     <p className='mb-1'>Average House Price</p>
                     <NumericFormat 
                         onValueChange={(value) => {
@@ -96,43 +96,72 @@ function Calculator() {
 
             <div className='col d-flex m-0'>
 
-                <div className='calc-container w-100 py-3'>
-                    <p className='fs-4 py-3 border-bottom w-75 m-auto pt-4 fw-bold'>Your Results</p>
-                    
-                    <div className='d-flex justify-content-between w-75 m-auto mt-3'>
-                        <p>Average House Price</p>
-                        <p className='header-link nav-link'><span className='fs-5 fw-bold'>${housePrice.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</span></p>
-                    </div>
-                    <div className='d-flex justify-content-between w-75 m-auto mt-1'>
-                        <p>Average Commission Rate</p>
-                        <p className='header-link nav-link'><span className='fs-5 fw-bold'>{commissionRate.toLocaleString()} %</span></p>
-                    </div>
-                    <div className='d-flex justify-content-between w-75 m-auto mt-1'>
-                        <p>Average Commission per Deal</p>
-                        <p className='header-link nav-link'><span className='fs-5 fw-bold'>$ {totalCommission.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</span> / deal</p>
-                    </div>
-                    
-                    <div className='d-flex justify-content-between w-75 m-auto mt-3'>
-                        <p>Total Leads</p>
-                        <p className='header-link nav-link'><span className='fs-5 fw-bold'>{totalLeads.toLocaleString()}</span></p>
-                    </div>
-                    <div className='d-flex justify-content-between w-75 m-auto mt-1'>
-                        <p>Lead Conversion Rate</p>
-                        <p className='header-link nav-link'><span className='fs-5 fw-bold'>{leadConversion.toLocaleString()} %</span></p>
-                    </div>
-                    <div className='d-flex justify-content-between w-75 m-auto mt-1'>
-                        <p>Total Leads Per Year</p>
-                        <p className='header-link nav-link'><span className='fs-5 fw-bold'>{leads.toLocaleString()}</span> deals / year</p>
-                    </div>
+            <div className='calc-container w-100 py-3'>
+                <p className='fs-4 py-3 border-bottom w-75 m-auto pt-4 fw-bold'>Your Results</p>
 
-                    <div className='d-flex justify-content-between w-75 m-auto border-top pb-4 pt-3 align-items-end gci-container'>
-                        <p>Annual GCI</p>
-                        <p className='fs-5 fw-bold'>${gci.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</p>
-                    </div>
+                <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
+                <p>Average House Price</p>
+                <p className='header-link nav-link'>
+                    <span className='fs-5 fw-bold'>
+                    ${housePrice.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
+                    </span>
+                </p>
+                </div>
+                
+                <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
+                <p>Average Commission Rate</p>
+                <p className='header-link nav-link'>
+                    <span className='fs-5 fw-bold'>
+                    {commissionRate.toLocaleString()} %
+                    </span>
+                </p>
                 </div>
 
+                <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
+                <p>Average Commission per Deal</p>
+                <p className='header-link nav-link'>
+                    <span className='fs-5 fw-bold'>
+                    $ {totalCommission.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
+                    </span> / deal
+                </p>
+                </div>
+
+                <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
+                <p>Total Leads</p>
+                <p className='header-link nav-link'>
+                    <span className='fs-5 fw-bold'>
+                    {totalLeads.toLocaleString()}
+                    </span>
+                </p>
+                </div>
+
+                <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
+                <p>Lead Conversion Rate</p>
+                <p className='header-link nav-link'>
+                    <span className='fs-5 fw-bold'>
+                    {leadConversion.toLocaleString()} %
+                    </span>
+                </p>
+                </div>
+
+                <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
+                <p>Total Leads Per Year</p>
+                <p className='header-link nav-link'>
+                    <span className='fs-5 fw-bold'>
+                    {leads.toLocaleString()}
+                    </span> deals / year
+                </p>
+                </div>
+
+                <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto border-top pb-4 pt-3 align-items-center align-items-md-end gci-container'>                <p>Annual GCI</p>
+                    <p className='fs-5 fw-bold'>
+                        ${gci.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
+                    </p>
+                </div>
+            </div>
 
             </div>
+
 
         </div>
     )
