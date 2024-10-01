@@ -7,7 +7,7 @@ import "./pricing.css"
 
 function Pricing() {
     return (
-        <div className="body-cointainer text-white">
+        <div className="body-container text-white">
             <Header />
 
             <div className="text-center my-5">
