@@ -11,7 +11,7 @@ import "../css/landing.css";
 
 function HowItWorks() {
     return (
-        <div>
+        <div className="body-cointainer text-white">
             <Header />
 
             <div className="border-bottom pb-5 row m-0 row-cols-1 row-cols-md-2">
