@@ -5,7 +5,7 @@ import "../css/landing.css"
 
 function Footer() {
     return (
-        <footer className="row pt-5 mt-5 border-top m-0">
+        <footer className="row pt-5 mt-5 border-top m-0 body-container text-white">
             <div className="col-6 my-3 footer-hide">
                 <a href="/" className="d-flex align-items-center mb-3 mt-5 ms-5">
                     <Image 

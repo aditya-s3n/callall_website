@@ -22,7 +22,7 @@ export default function Home() {
   }
 
   return (
-    <div className="">
+    <div className="body-container">
       <Header />
       
       <div className='mb-5'>
@@ -37,7 +37,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="col py-5 px-5 mt-5 text-center text-md-start">
+          <div className="col py-5 px-5 mt-5 text-center text-md-start text-white">
             <p className="title-txt fw-semibold lh-1">AI Driven.</p>
             <p className="title-txt fw-semibold lh-sm">Outbound. Inbound.</p>
 
@@ -53,7 +53,7 @@ export default function Home() {
 
    
 
-      <div className='border-top outline-header section-width m-auto'>
+      <div className='border-top outline-header section-width m-auto text-white'>
         <div>
           <p className='section-header'>Can&apos;t tell...</p>
         </div>
@@ -106,7 +106,7 @@ export default function Home() {
         </div>
       </div>
       
-      <div className='border-top outline-header section-width m-auto'>
+      <div className='border-top outline-header section-width m-auto text-white'>
         <FadeIn className=''>
           <div>
             <p className='section-header mb-4'>Why CallAll.AI?</p>
@@ -148,7 +148,7 @@ export default function Home() {
         </FadeIn>
       </div>
       
-      <div className='border-top outline-header section-width m-auto'>
+      <div className='border-top outline-header section-width m-auto text-white'>
         <div>
             <p className='section-header'>Calculate your earnings</p>
         </div>
@@ -157,7 +157,7 @@ export default function Home() {
         
       </div>
       
-      <div className='border-top outline-header section-width m-auto'>
+      <div className='border-top outline-header section-width m-auto text-white'>
         <FadeIn className=''>
           <div>
             <p className='section-header'>Need more Reasons?</p>
@@ -199,7 +199,7 @@ export default function Home() {
         </FadeIn>
       </div>
       
-      <div className='border-top outline-header section-width m-auto'>
+      <div className='border-top outline-header section-width m-auto text-white'>
         <div>
           <p className='section-header'>Speak to the CallAll.AI Chat</p>
         </div>
@@ -224,7 +224,7 @@ export default function Home() {
       </div>
 
 
-      <div className='border-top outline-header section-width m-auto'>
+      <div className='border-top outline-header section-width m-auto text-white'>
         <div>
           <p className='section-header'>FAQs</p>
         </div>
@@ -247,7 +247,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='border-top outline-header section-width m-auto text-center'>
+      <div className='border-top outline-header section-width m-auto text-center text-white'>
         <FadeIn className=''>
             <Image 
                 className='m-auto mt-5'
