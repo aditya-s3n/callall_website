@@ -24,6 +24,7 @@ function Header() {
                     <ul className="nav nav-pills navbar-nav ms-auto d-flext">
                         <li className="nav-item"><a href="/whatwedo" className="nav-link header-link" aria-current="page">What We Do</a></li>
                         <li className="nav-item"><a href="/howitworks" className="nav-link header-link">How It Works</a></li>
+                        <li className="nav-item"><a href="/calculator" className="nav-link header-link">Calculator</a></li>
                         <li className="nav-item"><a href="/pricing" className="nav-link header-link me-3">Pricing</a></li>
                         <li className="nav-item"><a href="https://cal.com/courtneycarroll/test-callall.ai-phone-appoint" className="btn header-btn nav-link">Book a Meeting</a></li>
                     </ul>

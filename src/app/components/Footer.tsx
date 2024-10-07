@@ -32,6 +32,7 @@ function Footer() {
                 <h5 className="mb-3">Resources</h5>
                 <ul className="nav flex-column">
                     <li className="nav-item mb-2"><a href="/whatwedo" className="nav-link p-0 text-decoration-underline header-link">About us</a></li>
+                    <li className="nav-item mb-2"><a href="/calculator" className="nav-link p-0 text-decoration-underline header-link">Calculator</a></li>
                     <li className="nav-item mb-2"><a href="/pricing" className="nav-link p-0 text-decoration-underline header-link">Pricing</a></li>
                 </ul>
             </div>
