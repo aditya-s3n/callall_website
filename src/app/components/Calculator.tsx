@@ -100,7 +100,7 @@ function Calculator() {
                 <p className='fs-4 py-3 border-bottom w-75 m-auto pt-4 fw-bold text-light'>Your Results</p>
 
                 <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
-                <p className='text-light'>Average House Price</p>
+                <p className='text-light'>Avg House Price</p>
                 <p className='header-link nav-link'>
                     <span className='fs-5 fw-bold'>
                     ${housePrice.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
@@ -109,7 +109,7 @@ function Calculator() {
                 </div>
                 
                 <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
-                <p className='text-light'>Average Commission Rate</p>
+                <p className='text-light'>Avg Commission Rate</p>
                 <p className='header-link nav-link'>
                     <span className='fs-5 fw-bold'>
                     {commissionRate.toLocaleString()} %
@@ -118,7 +118,7 @@ function Calculator() {
                 </div>
 
                 <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
-                <p className='text-light'>Average Commission per Deal</p>
+                <p className='text-light'>Avg Commission / Deal</p>
                 <p className='header-link nav-link'>
                     <span className='fs-5 fw-bold'>
                     $ {totalCommission.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
@@ -145,7 +145,7 @@ function Calculator() {
                 </div>
 
                 <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
-                <p className='text-light'>Total Leads Per Year</p>
+                <p className='text-light'>Total Leads / Year</p>
                 <p className='header-link nav-link'>
                     <span className='fs-5 fw-bold'>
                     {leads.toLocaleString()}
