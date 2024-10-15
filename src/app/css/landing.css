@@ -2,6 +2,14 @@
     border-color: #8F8F8F !important;
 }
 
+.secondary-div {
+    background-color: #262626;
+}
+
+.tertiary-div {
+    background-color: #1d1d1d;
+}
+
 .header-link {
     color: #8F8F8F;
 }
@@ -57,11 +65,11 @@
 }
 
 .section-width {
-    width: 90%;
+    padding: 0 10%;
 }
 
 .section-header {
-    margin-top: 10px;
+    padding-top: 10px;
     font-size: 1.5rem;
 }
 
@@ -134,12 +142,42 @@
     transition: opacity 0.6s ease-out, transform 1.2s ease-out;
     will-change: opacity, visibility;
   }
-  
-.fade-in-section.is-visible {
-opacity: 1;
-transform: none;
-visibility: visible;
+
+  .fade-in-top {
+    opacity: 0;
+    transform: translateY(-20vh); /* Start 20vh above */
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
 }
+
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-20vw); /* Start 20vw to the left */
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+}
+
+/* Fade-in from the right */
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(20vw); /* Start 20vw to the right */
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+}
+
+/* When the element becomes visible */
+.fade-in-left.is-visible,
+.fade-in-right.is-visible,
+.fade-in-section.is-visible,
+.fade-in-top.is-visible {
+    opacity: 1;
+    transform: none; /* Reset the transform to default (no translation) */
+    visibility: visible;
+}
+
 
 .footer-hide {
     display: inline;

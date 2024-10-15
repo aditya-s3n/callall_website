@@ -53,7 +53,8 @@ export default function Home() {
 
    
 
-      <div className='border-top outline-header section-width m-auto text-white'>
+      <div className=' border-top secondary-div border-top outline-header section-width m-auto text-white'>
+        <FadeIn className='fade-in-section'>
         <div>
           <p className='section-header'>Can&apos;t tell...</p>
         </div>
@@ -80,7 +81,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='row m-0 mb-4'>
+        <div className='row m-0 pb-4'>
           <div className='col d-flex justify-content-end align-items-center'>
             <button onClick={play}>
               {playMedia ?
@@ -104,15 +105,16 @@ export default function Home() {
             <span className='header-link'>00:00 / 02:47</span>
           </div>
         </div>
+        </FadeIn>
       </div>
       
-      <div className='border-top outline-header section-width m-auto text-white'>
-        <FadeIn className=''>
+      <div className='border-top tertiary-div outline-header section-width m-auto text-white'>
+        <FadeIn className='fade-in-top'>
           <div>
-            <p className='section-header mb-4'>Why CallAll.AI?</p>
+            <p className='section-header mb-5'>Why CallAll.AI?</p>
           </div>
 
-          <div className='row m-0 mb-3 row-cols-1 row-cols-md-3'>
+          <div className='row m-0 pb-3 row-cols-1 row-cols-md-3'>
 
             <div className='col my-5'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" fill="currentColor" className="bi bi-boxes m-auto" viewBox="0 0 16 16">
@@ -135,7 +137,7 @@ export default function Home() {
                 
             </div>
 
-            <div className='col my-5'>
+            <div className='col py-5'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" fill="currentColor" className="bi bi-house-heart-fill m-auto" viewBox="0 0 16 16">
                   <path d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.707L8 2.207 1.354 8.853a.5.5 0 1 1-.708-.707z"/>
                   <path d="m14 9.293-6-6-6 6V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5zm-6-.811c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.691 0-5.018"/>
@@ -157,13 +159,13 @@ export default function Home() {
         
       </div>
       
-      <div className='border-top outline-header section-width m-auto text-white'>
-        <FadeIn className=''>
+      <div className='border-top tertiary-div outline-header section-width m-auto text-white'>
+        <FadeIn className='fade-in-section '>
           <div>
-            <p className='section-header'>Need more Reasons?</p>
+            <p className='section-header mb-5'>Need more Reasons?</p>
           </div>
 
-          <div className='row m-0 mb-3 row-cols-1 row-cols-md-3'>
+          <div className='row m-0 pb-3 row-cols-1 row-cols-md-3'>
             <div className='col my-5'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" fill="currentColor" className="bi bi-houses-fill m-auto" viewBox="0 0 16 16">
                     <path d="M7.207 1a1 1 0 0 0-1.414 0L.146 6.646a.5.5 0 0 0 .708.708L1 7.207V12.5A1.5 1.5 0 0 0 2.5 14h.55a2.5 2.5 0 0 1-.05-.5V9.415a1.5 1.5 0 0 1-.56-2.475l5.353-5.354z"/>
@@ -199,7 +201,7 @@ export default function Home() {
         </FadeIn>
       </div>
       
-      <div className='border-top outline-header section-width m-auto text-white'>
+      <div className=' border-top outline-header section-width m-auto text-white'>
         <div>
           <p className='section-header'>Speak to the CallAll.AI Chat</p>
         </div>
@@ -224,7 +226,8 @@ export default function Home() {
       </div>
 
 
-      <div className='border-top outline-header section-width m-auto text-white'>
+      <div className=' secondary-div border-top outline-header section-width m-auto text-white'>
+        <FadeIn className='fade-in-section'>
         <div>
           <p className='section-header'>FAQs</p>
         </div>
@@ -245,10 +248,11 @@ export default function Home() {
               <Faqs />
           </div>
         </div>
+        </FadeIn>
       </div>
 
-      <div className='border-top outline-header section-width m-auto text-center text-white'>
-        <FadeIn className=''>
+      <div className='tertiary-div border-top outline-header section-width m-auto text-center text-white'>
+        <FadeIn className='fade-in-top pb-5'>
             <Image 
                 className='m-auto mt-5'
                 src={logo}
@@ -257,7 +261,7 @@ export default function Home() {
                 alt="Logo"
             />
 
-            <h1 className='fw-bold fs-3 mb-4'>Because AIs Don&apos;t Make Excuses</h1>
+            <h1 className='fw-bold fs-3 pb-4'>Because AIs Don&apos;t Make Excuses</h1>
 
             <a href='https://cal.com/courtneycarroll/test-callall.ai-phone-appoint'><button className="btn header-btn large-btn w-50 py-2">Book a Meeting</button></a>
           </FadeIn>

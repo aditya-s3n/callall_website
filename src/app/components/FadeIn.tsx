@@ -27,7 +27,7 @@ function FadeIn({ children, className }: { children: ReactNode, className : stri
 
     return (
         <div
-            className={`fade-in-section ${className} ${isVisible ? 'is-visible' : ''}`}
+            className={`${className} ${isVisible ? 'is-visible' : ''}`}
             ref={domRef}
         >
             {children}

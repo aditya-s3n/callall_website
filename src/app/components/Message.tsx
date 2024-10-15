@@ -3,7 +3,7 @@ import "../css/landing.css"
 
 function Message() {
     return (
-        <div className="row m-0 mx-5 row-cols-1 row-cols-md-2">
+        <div className="row m-0 mx-5 pb-5 row-cols-1 row-cols-md-2">
 
             <div className="col">
 
