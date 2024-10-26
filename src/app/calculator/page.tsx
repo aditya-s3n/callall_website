@@ -7,7 +7,7 @@ import "../css/landing.css";
 
 function CalculatorPage() {
     return (
-        <div className="">
+        <div className="body-container text-white">
             <Header />
             
             <div className="text-center my-5">
