@@ -17,7 +17,7 @@ async function openAIRequest(message: string) {
     stream: true
   });
 
-  var ai_message = ""
+  let ai_message = ""
   for await (const event of stream) {
 
 
