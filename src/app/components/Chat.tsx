@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import '../css/chat.css';
 import { OpenAI } from "openai";
-import "../envConfig.ts"
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
