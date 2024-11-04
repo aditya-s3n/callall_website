@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import '../css/chat.css';
 import { OpenAI } from "openai";
 
@@ -19,13 +19,12 @@ async function openAIRequest(message: string) {
 
   var ai_message = ""
   for await (const event of stream) {
-    console.log(event);
+
 
     if (event.event === "thread.message.delta" && event.data.delta.content !== undefined) {
       const content_arr = event.data.delta.content
 
       for (const content of content_arr) {
-        console.log(content);
         if ("text" in content) {
           ai_message += content.text?.value; 
         }
@@ -42,8 +41,6 @@ export default function Chat() {
     { text: "Hi I'm Collin, how may I assist you today?", sender: "bot" },
   ]);
   const [inputMessage, setInputMessage] = useState("");
-  const [threadID, setThreadID] = useState(null);
-  const [isTyping, setIsTyping] = useState(false);  // State to indicate typing animation
 
   const handleSend = async () => {
     if (inputMessage.trim() === "") return;
@@ -61,8 +58,6 @@ export default function Chat() {
     const ai_response = await openAIRequest(user_message);
     const formattedResponse = ai_response.replace(/\n/g, "<br />");
   
-    // Start typing animation
-    setIsTyping(true);
     let displayedText = "";
     
     // Add an initial empty message for the bot
@@ -82,7 +77,6 @@ export default function Chat() {
       });
     }
   
-    setIsTyping(false); // End typing animation
   };
 
   return (
