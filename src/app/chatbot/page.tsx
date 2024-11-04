@@ -1,40 +1,7 @@
+"use client";
+
 import React, { useState } from 'react';
 import '../css/chat.css';
-import { OpenAI } from "openai";
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-async function openAIRequest(message: string) {
-  const stream = await openai.beta.threads.createAndRun({
-    assistant_id: "asst_KALTCQrKd5aKMv9LLVgoyJF5",
-    thread: {
-      messages: [
-        { role: "user", content: message },
-      ],
-    },
-    stream: true
-  });
-
-  let ai_message = ""
-  for await (const event of stream) {
-
-
-    if (event.event === "thread.message.delta" && event.data.delta.content !== undefined) {
-      const content_arr = event.data.delta.content
-
-      for (const content of content_arr) {
-        if ("text" in content) {
-          ai_message += content.text?.value; 
-        }
-      }
-    }
-
-  }
-
-  return ai_message;
-}
 
 export default function Chat() {
   const [messages, setMessages] = useState([
@@ -44,39 +11,56 @@ export default function Chat() {
 
   const handleSend = async () => {
     if (inputMessage.trim() === "") return;
-  
+
     const user_message = inputMessage;
     setInputMessage("");
-  
+
     // Append user message to the chat
     setMessages((prevMessages) => [
       ...prevMessages,
       { text: user_message, sender: "user" },
     ]);
-  
+
     // Start the typing animation for bot response
-    const ai_response = await openAIRequest(user_message);
-    const formattedResponse = ai_response.replace(/\n/g, "<br />");
-  
-    let displayedText = "";
-    
-    // Add an initial empty message for the bot
     setMessages((prevMessages) => [
       ...prevMessages,
       { text: "", sender: "bot" }, // Add an empty bot message for typing animation
     ]);
-  
-    for (let i = 0; i < formattedResponse.length; i++) {
-      displayedText += formattedResponse[i];
-      await new Promise((resolve) => setTimeout(resolve, 10));  // Adjust delay for speed
-      setMessages((prevMessages) => {
-        // Replace the last bot message with progressively displayed text
-        const updatedMessages = [...prevMessages];
-        updatedMessages[updatedMessages.length - 1] = { text: displayedText, sender: "bot" };
-        return updatedMessages;
+
+    try {
+      const response = await fetch('/api', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: user_message }),
       });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      const formattedResponse = data.message.replace(/\n/g, "<br />");
+      let displayedText = "";
+
+      for (let i = 0; i < formattedResponse.length; i++) {
+        displayedText += formattedResponse[i];
+        await new Promise((resolve) => setTimeout(resolve, 10)); // Adjust delay for speed
+        setMessages((prevMessages) => {
+          const updatedMessages = [...prevMessages];
+          updatedMessages[updatedMessages.length - 1] = { text: displayedText, sender: "bot" };
+          return updatedMessages;
+        });
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: "Sorry, something went wrong. Please try again.", sender: "bot" },
+      ]);
     }
-  
   };
 
   return (
@@ -103,8 +87,6 @@ export default function Chat() {
           Send
         </button>
       </div>
-
-      
     </div>
   );
 }

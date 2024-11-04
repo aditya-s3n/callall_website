@@ -8,13 +8,13 @@ import logo from "./imgs/logo.png"
 
 import React, { useState } from 'react';
 import Footer from './components/Footer';
-import Chat from './components/Chat';
 import Faqs from './components/Faqs';
 import FadeIn from './components/FadeIn';
 import Calculator from './components/Calculator';
 
 export default function Home() {
 
+  console.log(process.env.NEXT_PUBLIC_OPENAI_API_KEY)
   const [playMedia, setPlayMedia] = useState(false);
 
   function play() {
@@ -201,7 +201,7 @@ export default function Home() {
         </FadeIn>
       </div>
       
-      <div className=' border-top outline-header section-width m-auto text-white'>
+      {/* <div className=' border-top outline-header section-width m-auto text-white'>
         <div>
           <p className='section-header'>Speak to the CallAll.AI Chat</p>
         </div>
@@ -223,7 +223,7 @@ export default function Home() {
               <Chat />
           </div>
         </div>
-      </div>
+      </div> */}
 
 
       <div className=' secondary-div border-top outline-header section-width m-auto text-white'>
