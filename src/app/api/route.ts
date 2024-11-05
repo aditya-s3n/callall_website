@@ -8,8 +8,6 @@ export async function POST(request: Request) {
     const response = await request.json()
     const message = response.message
 
-    console.log("TEST")
-
     try {
       const stream = await openai.beta.threads.createAndRun({
         assistant_id: 'asst_KALTCQrKd5aKMv9LLVgoyJF5',

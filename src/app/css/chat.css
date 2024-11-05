@@ -34,6 +34,12 @@
   align-self: flex-end;
 }
 
+.chat-link {
+  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .botBubble {
   border: 1px solid;
   border-radius: 10px;
