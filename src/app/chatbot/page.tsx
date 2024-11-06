@@ -52,7 +52,7 @@ export default function Chat() {
     // Start the typing animation for bot response
     setMessages((prevMessages) => [
       ...prevMessages,
-      { text: "", sender: "bot" }, // Add an empty bot message for typing animation
+      { text: "Analyzing... please wait", sender: "bot" }, // Add an empty bot message for typing animation
     ]);
 
     try {
