@@ -13,7 +13,7 @@
 .chatWindow {
   border-radius: 10px;
   width: 100%;
-  height: 325px;
+  height: 500px;
   padding: 10px;
   overflow-y: scroll;
   display: flex;
