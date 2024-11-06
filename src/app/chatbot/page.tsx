@@ -62,7 +62,7 @@ export default function Chat() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ message: user_message }),
-        signal: AbortSignal.timeout(30000)
+        signal: AbortSignal.timeout(100000)
       });
 
       const data = await response.json();
