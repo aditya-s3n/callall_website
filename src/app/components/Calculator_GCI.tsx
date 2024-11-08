@@ -28,7 +28,7 @@ function Calculator() {
     }
 
     function calculateActivities(requiredDeals: number) {
-        let perDealActivities = {
+        const perDealActivities = {
             doorKnocks: 50,
             calls: 250,
             sphereCalls: 0,
