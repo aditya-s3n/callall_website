@@ -43,7 +43,6 @@ function Calculator() {
                     <NumericFormat 
                         onValueChange={(value) => {
                             if (value.floatValue) {
-                                console.log(value);
                                 setHousePrice(value.floatValue);
                                 calculateCommission(value.floatValue, commissionRate);
                             }   

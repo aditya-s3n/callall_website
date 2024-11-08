@@ -14,7 +14,6 @@ import Calculator from './components/Calculator';
 
 export default function Home() {
 
-  console.log(process.env.NEXT_PUBLIC_OPENAI_API_KEY)
   const [playMedia, setPlayMedia] = useState(false);
 
   function play() {
