@@ -11,10 +11,30 @@ function Calculator() {
 
     const [averageCommission, setAverageCommission] = useState(12500);
     const [totalDeals, setTotalDeals] = useState(8);
-    const [doorKnocks, setDoorKnocks] = useState(200);
-    const [calls, setCalls] = useState(1000);
-    const [sphereCalls, setSphereCalls] = useState(0);
-    const [openHouses, setOpenHouses] = useState(5);
+    const [doorKnocks, setDoorKnocks] = useState(1600);
+    const [calls, setCalls] = useState(8000);
+    const [sphereCalls, setSphereCalls] = useState(800);
+    const [openHouses, setOpenHouses] = useState(40);
+
+    const [selectedMethods, setSelectedMethods] = useState<{
+        doorKnocks: boolean;
+        calls: boolean;
+        sphereCalls: boolean;
+        openHouses: boolean;
+    }>({
+        doorKnocks: true,
+        calls: false,
+        sphereCalls: false,
+        openHouses: false,
+    });
+
+    // Use keyof to restrict method to valid keys of selectedMethods
+    function toggleMethod(method: keyof typeof selectedMethods) {
+        setSelectedMethods((prev) => ({
+            ...prev,
+            [method]: !prev[method],
+        }));
+    }
 
     function calculateCommission(newGCIGoal: number, newHousePrice: number, newCommissionRate: number, newSplitRate: number) {
         const commissionPerDeal = (newHousePrice * (newCommissionRate / 100)) * ((100 - newSplitRate) / 100);
@@ -29,10 +49,10 @@ function Calculator() {
 
     function calculateActivities(requiredDeals: number) {
         const perDealActivities = {
-            doorKnocks: 50,
-            calls: 250,
-            sphereCalls: 0,
-            openHouses: 1.25,
+            doorKnocks: 200,
+            calls: 1000,
+            sphereCalls: 100,
+            openHouses: 5,
         };
 
         // Calculate total activities
@@ -116,47 +136,65 @@ function Calculator() {
                         <p className='text-light'>Total Deals Required</p>
                         <p className='header-link nav-link'>
                             <span className='fs-5 fw-bold'>
-                                {totalDeals} deals
+                                {totalDeals.toLocaleString()} deals
                             </span>
                         </p>
                     </div>
                         
                     <p className='fs-4 py-3 border-bottom w-75 m-auto pt-4 fw-bold text-light'>How to Achieve</p>
-                    <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
-                        <p className='text-light'>Door Knocks</p>
-                        <p className='header-link nav-link'>
-                            <span className='fs-5 fw-bold'>
-                                {doorKnocks} knocks
-                            </span>
-                        </p>
+                    <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-2'>
+                        <button type="button" className="btn choice-input col mx-2 active" onClick={() => toggleMethod('doorKnocks')} data-bs-toggle="button">Door Knocks</button>
+                        <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('calls')} data-bs-toggle="button">Calls</button>
                     </div>
-
-                    <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
-                        <p className='text-light'>Calls</p>
-                        <p className='header-link nav-link'>
-                            <span className='fs-5 fw-bold'>
-                                {calls} calls
-                            </span>
-                        </p>
+                    <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-2'>
+                        <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('sphereCalls')} data-bs-toggle="button">Sphere Calls</button>
+                        <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('openHouses')} data-bs-toggle="button">Open Houses</button>
                     </div>
-
-                    <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
-                        <p className='text-light'>Sphere Calls</p>
-                        <p className='header-link nav-link'>
-                            <span className='fs-5 fw-bold'>
-                                {sphereCalls} sphere calls
-                            </span>
-                        </p>
-                    </div>
-
-                    <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
-                        <p className='text-light'>Open Houses</p>
-                        <p className='header-link nav-link'>
-                            <span className='fs-5 fw-bold'>
-                                {openHouses} open houses
-                            </span>
-                        </p>
-                    </div>
+                    {selectedMethods.doorKnocks && 
+                        <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
+                            <p className='text-light'>Door Knocks</p>
+                            <p className='header-link nav-link'>
+                                <span className='fs-5 fw-bold'>
+                                    {doorKnocks.toLocaleString()} knocks
+                                </span>
+                            </p>
+                        </div>
+                    }
+                    
+                    
+                    {selectedMethods.calls &&
+                        <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
+                            <p className='text-light'>Calls</p>
+                            <p className='header-link nav-link'>
+                                <span className='fs-5 fw-bold'>
+                                    {calls.toLocaleString()} calls
+                                </span>
+                            </p>
+                        </div>
+                    }   
+                    
+                    {selectedMethods.sphereCalls &&
+                        <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
+                            <p className='text-light'>Sphere Calls</p>
+                            <p className='header-link nav-link'>
+                                <span className='fs-5 fw-bold'>
+                                    {sphereCalls.toLocaleString()} sphere calls
+                                </span>
+                            </p>
+                        </div>
+                    }
+                    
+                    {selectedMethods.openHouses && 
+                        <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
+                            <p className='text-light'>Open Houses</p>
+                            <p className='header-link nav-link'>
+                                <span className='fs-5 fw-bold'>
+                                    {openHouses.toLocaleString()} open houses
+                                </span>
+                            </p>
+                        </div>
+                    }
+                    
                 </div>
             </div>
         </div>

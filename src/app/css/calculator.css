@@ -31,3 +31,19 @@
     margin-top: 10% !important;
     margin-bottom: 25px;
 }
+
+.choice-input {
+    color: white;
+    border: 1px solid;
+}
+
+.choice-input:hover {
+    border-color: #C1FF72;
+    color: #C1FF72;
+}
+
+.active {
+    color: black !important;
+    background-color: #C1FF72 !important;
+    border-color: #C1FF72 !important;
+}
