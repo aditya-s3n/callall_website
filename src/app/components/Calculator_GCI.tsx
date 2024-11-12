@@ -30,10 +30,13 @@ function Calculator() {
 
     // Use keyof to restrict method to valid keys of selectedMethods
     function toggleMethod(method: keyof typeof selectedMethods) {
-        setSelectedMethods((prev) => ({
-            ...prev,
-            [method]: !prev[method],
-        }));
+        setSelectedMethods((prev) => {
+            const updatedMethods = { ...prev, [method]: !prev[method] };
+            
+            calculateActivities(totalDeals, updatedMethods);
+
+            return updatedMethods;
+        });
     }
 
     function calculateCommission(newGCIGoal: number, newHousePrice: number, newCommissionRate: number, newSplitRate: number) {
@@ -44,10 +47,16 @@ function Calculator() {
         setTotalDeals(Math.ceil(requiredDeals));
 
         // Update activities based on the number of required deals
-        calculateActivities(requiredDeals);
+        calculateActivities(requiredDeals, selectedMethods);
     }
 
-    function calculateActivities(requiredDeals: number) {
+    function calculateActivities(requiredDeals: number, methods: {
+        doorKnocks: boolean;
+        calls: boolean;
+        sphereCalls: boolean;
+        openHouses: boolean;
+    }) {
+
         const perDealActivities = {
             doorKnocks: 200,
             calls: 1000,
@@ -55,11 +64,18 @@ function Calculator() {
             openHouses: 5,
         };
 
+        let selectedCount = 0;
+
+        if (methods.doorKnocks) selectedCount++;
+        if (methods.calls) selectedCount++;
+        if (methods.sphereCalls) selectedCount++;
+        if (methods.openHouses) selectedCount++;
+
         // Calculate total activities
-        setDoorKnocks(Math.ceil(perDealActivities.doorKnocks * requiredDeals));
-        setCalls(Math.ceil(perDealActivities.calls * requiredDeals));
-        setSphereCalls(Math.ceil(perDealActivities.sphereCalls * requiredDeals));
-        setOpenHouses(Math.ceil(perDealActivities.openHouses * requiredDeals));
+        setDoorKnocks(Math.ceil((perDealActivities.doorKnocks * requiredDeals) / selectedCount));
+        setCalls(Math.ceil((perDealActivities.calls * requiredDeals) / selectedCount));
+        setSphereCalls(Math.ceil((perDealActivities.sphereCalls * requiredDeals) / selectedCount));
+        setOpenHouses(Math.ceil((perDealActivities.openHouses * requiredDeals) / selectedCount));
     }
 
     return (
@@ -76,7 +92,25 @@ function Calculator() {
                             }
                         }}
                         value={gciGoal}
-                        prefix='$ ' className='w-50 p-2 input-format' placeholder='$ 0' thousandSeparator decimalScale={2} allowNegative={false} />
+                        prefix='$ ' className='w-50 p-2 input-format' placeholder='$ 0' thousandSeparator decimalScale={2} allowNegative={false} 
+                    />
+
+                    
+                </div>
+
+                <div>
+                <input 
+                        type="range" 
+                        className="form-range w-50 mt-2" 
+                        min="0" 
+                        max="1000000" 
+                        value={gciGoal} 
+                        onChange={(e) => {
+                            const newGoal = Number(e.target.value);
+                            setGciGoal(newGoal);
+                            calculateCommission(newGoal, housePrice, commissionRate, splitRate);
+                        }} 
+                    />
                 </div>
 
                 <div className='mt-3'>
@@ -163,7 +197,7 @@ function Calculator() {
                     
                     
                     {selectedMethods.calls &&
-                        <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
+                        <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
                             <p className='text-light'>Calls</p>
                             <p className='header-link nav-link'>
                                 <span className='fs-5 fw-bold'>
@@ -174,7 +208,7 @@ function Calculator() {
                     }   
                     
                     {selectedMethods.sphereCalls &&
-                        <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
+                        <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
                             <p className='text-light'>Sphere Calls</p>
                             <p className='header-link nav-link'>
                                 <span className='fs-5 fw-bold'>
@@ -185,7 +219,7 @@ function Calculator() {
                     }
                     
                     {selectedMethods.openHouses && 
-                        <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-1'>
+                        <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
                             <p className='text-light'>Open Houses</p>
                             <p className='header-link nav-link'>
                                 <span className='fs-5 fw-bold'>
