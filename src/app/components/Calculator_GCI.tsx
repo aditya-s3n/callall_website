@@ -99,7 +99,7 @@ function Calculator() {
                 </div>
 
                 <div>
-                <input 
+                    <input 
                         type="range" 
                         className="form-range w-50 mt-2" 
                         min="0" 
@@ -126,6 +126,22 @@ function Calculator() {
                         prefix='$ ' className='w-50 p-2 input-format' placeholder='$ 0' thousandSeparator decimalScale={2} allowNegative={false} />
                 </div>
 
+                <div>
+                    <input 
+                        type="range" 
+                        className="form-range w-50 mt-2" 
+                        min="0" 
+                        max="5000000" 
+                        step="10000"
+                        value={housePrice} 
+                        onChange={(e) => {
+                            const newPrice = Number(e.target.value);
+                            setHousePrice(newPrice);
+                            calculateCommission(gciGoal, newPrice, commissionRate, splitRate);
+                        }} 
+                    />
+                </div>
+
                 <div className='mt-3'>
                     <p className='mb-1'>Average Commission Rate</p>
                     <NumericFormat
@@ -137,6 +153,22 @@ function Calculator() {
                         }}
                         value={commissionRate}
                         suffix=' %' className='w-50 p-2 input-format' thousandSeparator placeholder='0 %' allowNegative={false} />
+                </div>
+                
+                <div>
+                    <input 
+                        type="range" 
+                        className="form-range w-50 mt-2" 
+                        min="0" 
+                        max="100" 
+                        step="0.1"
+                        value={commissionRate} 
+                        onChange={(e) => {
+                            const newRate = Number(e.target.value);
+                            setCommissionRate(newRate);
+                            calculateCommission(gciGoal, housePrice, newRate, splitRate);
+                        }} 
+                    />
                 </div>
 
                 <div className='mt-3'>
@@ -150,6 +182,21 @@ function Calculator() {
                         }}
                         value={splitRate}
                         suffix=' %' className='w-50 p-2 input-format' thousandSeparator placeholder='0 %' allowNegative={false} />
+                </div>
+
+                <div>
+                    <input 
+                        type="range" 
+                        className="form-range w-50 mt-2" 
+                        min="0" 
+                        max="100" 
+                        value={splitRate} 
+                        onChange={(e) => {
+                            const newSplit = Number(e.target.value);
+                            setSplitRate(newSplit);
+                            calculateCommission(gciGoal, housePrice, commissionRate, newSplit);
+                        }} 
+                    />
                 </div>
             </div>
 
