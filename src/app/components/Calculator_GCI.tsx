@@ -12,9 +12,9 @@ function Calculator() {
     const [averageCommission, setAverageCommission] = useState(12500);
     const [totalDeals, setTotalDeals] = useState(8);
     const [doorKnocks, setDoorKnocks] = useState(1600);
-    const [calls, setCalls] = useState(8000);
-    const [sphereCalls, setSphereCalls] = useState(800);
-    const [openHouses, setOpenHouses] = useState(40);
+    const [calls, setCalls] = useState(0);
+    const [sphereCalls, setSphereCalls] = useState(0);
+    const [openHouses, setOpenHouses] = useState(0);
 
     const [selectedMethods, setSelectedMethods] = useState<{
         doorKnocks: boolean;
@@ -58,18 +58,32 @@ function Calculator() {
     }) {
 
         const perDealActivities = {
-            doorKnocks: 200,
-            calls: 1000,
-            sphereCalls: 100,
-            openHouses: 5,
+            doorKnocks: 0,
+            calls: 0,
+            sphereCalls: 0,
+            openHouses: 0,
         };
 
         let selectedCount = 0;
 
-        if (methods.doorKnocks) selectedCount++;
-        if (methods.calls) selectedCount++;
-        if (methods.sphereCalls) selectedCount++;
-        if (methods.openHouses) selectedCount++;
+        if (methods.doorKnocks) {
+            selectedCount++;
+            perDealActivities.doorKnocks = 200;
+        }
+        if (methods.calls) {
+            selectedCount++;
+            perDealActivities.calls = 1000;
+        }
+        if (methods.sphereCalls) {
+            selectedCount++;
+            perDealActivities.sphereCalls = 100;
+        }
+        if (methods.openHouses) {
+            selectedCount++;
+            perDealActivities.openHouses = 5;
+        }
+
+        console.log(perDealActivities.doorKnocks);
 
         // Calculate total activities
         setDoorKnocks(Math.ceil((perDealActivities.doorKnocks * requiredDeals) / selectedCount));
@@ -98,20 +112,6 @@ function Calculator() {
                     
                 </div>
 
-                <div>
-                    <input 
-                        type="range" 
-                        className="form-range w-50 mt-2" 
-                        min="0" 
-                        max="1000000" 
-                        value={gciGoal} 
-                        onChange={(e) => {
-                            const newGoal = Number(e.target.value);
-                            setGciGoal(newGoal);
-                            calculateCommission(newGoal, housePrice, commissionRate, splitRate);
-                        }} 
-                    />
-                </div>
 
                 <div className='mt-3'>
                     <p className='mb-1'>Average House Price</p>
@@ -126,21 +126,6 @@ function Calculator() {
                         prefix='$ ' className='w-50 p-2 input-format' placeholder='$ 0' thousandSeparator decimalScale={2} allowNegative={false} />
                 </div>
 
-                <div>
-                    <input 
-                        type="range" 
-                        className="form-range w-50 mt-2" 
-                        min="0" 
-                        max="5000000" 
-                        step="10000"
-                        value={housePrice} 
-                        onChange={(e) => {
-                            const newPrice = Number(e.target.value);
-                            setHousePrice(newPrice);
-                            calculateCommission(gciGoal, newPrice, commissionRate, splitRate);
-                        }} 
-                    />
-                </div>
 
                 <div className='mt-3'>
                     <p className='mb-1'>Average Commission Rate</p>
@@ -153,22 +138,6 @@ function Calculator() {
                         }}
                         value={commissionRate}
                         suffix=' %' className='w-50 p-2 input-format' thousandSeparator placeholder='0 %' allowNegative={false} />
-                </div>
-                
-                <div>
-                    <input 
-                        type="range" 
-                        className="form-range w-50 mt-2" 
-                        min="0" 
-                        max="100" 
-                        step="0.1"
-                        value={commissionRate} 
-                        onChange={(e) => {
-                            const newRate = Number(e.target.value);
-                            setCommissionRate(newRate);
-                            calculateCommission(gciGoal, housePrice, newRate, splitRate);
-                        }} 
-                    />
                 </div>
 
                 <div className='mt-3'>
@@ -184,20 +153,6 @@ function Calculator() {
                         suffix=' %' className='w-50 p-2 input-format' thousandSeparator placeholder='0 %' allowNegative={false} />
                 </div>
 
-                <div>
-                    <input 
-                        type="range" 
-                        className="form-range w-50 mt-2" 
-                        min="0" 
-                        max="100" 
-                        value={splitRate} 
-                        onChange={(e) => {
-                            const newSplit = Number(e.target.value);
-                            setSplitRate(newSplit);
-                            calculateCommission(gciGoal, housePrice, commissionRate, newSplit);
-                        }} 
-                    />
-                </div>
             </div>
 
             <div className='col d-flex m-0'>
@@ -223,15 +178,16 @@ function Calculator() {
                     </div>
                         
                     <p className='fs-4 py-3 border-bottom w-75 m-auto pt-4 fw-bold text-light'>How to Achieve</p>
+                    <p className='mt-2'>Select Propsecting Activities</p>
                     <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-2'>
                         <button type="button" className="btn choice-input col mx-2 active" onClick={() => toggleMethod('doorKnocks')} data-bs-toggle="button">Door Knocks</button>
                         <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('calls')} data-bs-toggle="button">Calls</button>
                     </div>
-                    <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-2'>
+                    <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-2 border-bottom pb-4'>
                         <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('sphereCalls')} data-bs-toggle="button">Sphere Calls</button>
                         <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('openHouses')} data-bs-toggle="button">Open Houses</button>
                     </div>
-                    {selectedMethods.doorKnocks && 
+
                         <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
                             <p className='text-light'>Door Knocks</p>
                             <p className='header-link nav-link'>
@@ -240,10 +196,9 @@ function Calculator() {
                                 </span>
                             </p>
                         </div>
-                    }
                     
                     
-                    {selectedMethods.calls &&
+                    
                         <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
                             <p className='text-light'>Calls</p>
                             <p className='header-link nav-link'>
@@ -252,9 +207,9 @@ function Calculator() {
                                 </span>
                             </p>
                         </div>
-                    }   
+ 
                     
-                    {selectedMethods.sphereCalls &&
+                    
                         <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
                             <p className='text-light'>Sphere Calls</p>
                             <p className='header-link nav-link'>
@@ -263,9 +218,8 @@ function Calculator() {
                                 </span>
                             </p>
                         </div>
-                    }
                     
-                    {selectedMethods.openHouses && 
+                    
                         <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
                             <p className='text-light'>Open Houses</p>
                             <p className='header-link nav-link'>
@@ -274,7 +228,7 @@ function Calculator() {
                                 </span>
                             </p>
                         </div>
-                    }
+                    
                     
                 </div>
             </div>
