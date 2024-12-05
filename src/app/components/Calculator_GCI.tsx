@@ -180,12 +180,12 @@ function Calculator() {
                     <p className='fs-4 py-3 border-bottom w-75 m-auto pt-4 fw-bold text-light'>How to Achieve</p>
                     <p className='mt-2'>Select Propsecting Activities</p>
                     <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-2'>
-                        <button type="button" className="btn choice-input col mx-2 active" onClick={() => toggleMethod('doorKnocks')} data-bs-toggle="button">Door Knocks</button>
-                        <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('calls')} data-bs-toggle="button">Calls</button>
+                        <button type="button" className="btn choice-input col mx-2 active" onClick={() => toggleMethod('doorKnocks')} data-bs-toggle="button">Door Knocks {selectedMethods.doorKnocks && <i className="bi bi-check-lg fw-bold"></i>}</button>
+                        <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('calls')} data-bs-toggle="button">Calls {selectedMethods.calls && <i className="bi bi-check-lg fw-bold"></i>}</button>
                     </div>
                     <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-2 border-bottom pb-4'>
-                        <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('sphereCalls')} data-bs-toggle="button">Sphere Calls</button>
-                        <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('openHouses')} data-bs-toggle="button">Open Houses</button>
+                        <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('sphereCalls')} data-bs-toggle="button">Sphere Calls {selectedMethods.sphereCalls && <i className="bi bi-check-lg fw-bold"></i>}</button>
+                        <button type="button" className="btn choice-input col mx-2" onClick={() => toggleMethod('openHouses')} data-bs-toggle="button">Open Houses {selectedMethods.openHouses && <i className="bi bi-check-lg fw-bold"></i>}</button>
                     </div>
 
                         <div className='d-flex flex-column flex-md-row justify-content-between w-75 m-auto mt-3'>
